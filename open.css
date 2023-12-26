@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: linear-gradient(0deg, #e87d7d 0%, #11a4ff 100%);
+}
+
+#envelope {
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 150px);
+  width: 300px;
+  height: 300px;
+}
+
+#envelope > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#back {
+  display: block;
+  z-index: 0;
+}
+
+#front {
+  display: block;
+  z-index: 10;
+}
+
+#top {
+  display: block;
+  z-index: 11;
+}
+
+#top.animate,
+#front.animate,
+#back.animate,
+#envelope button.animate {
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: 1s;
+}
+
+#letter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  z-index: 5;
+  left: 15px;
+  right: 15px;
+  bottom: 5px;
+  top: 105px;
+
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  font-size: 16px;
+}
+h1 {
+  padding-top: 12px;
+}
+h1 span {
+  color: red;
+}
+p {
+  font-size: 17px;
+  padding: 2px;
+  line-height: 20px;
+}
+#letter img {
+  background-size: cover;
+}
+#letter.animate {
+  animation: makebig 2s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes makebig {
+  0% {
+    top: 105px;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    font-size: 16px;
+  }
+  33% {
+    top: -100px;
+    left: 15px;
+    right: 15px;
+    bottom: 150px;
+    font-size: 16px;
+  }
+  100% {
+    top: -0px;
+    left: -55px;
+    right: -25px;
+    bottom: -100px;
+    font-size: 24px;
+  }
+}
+
+#letter h1 {
+  font-size: inherit;
+}
+
+#letter h2 {
+  font-size: inherit;
+}
+
+#letter img {
+  height: 50%;
+}
+a {
+  color: red;
+}
+#envelope button {
+  display: block;
+  z-index: 15;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(255, 89, 0);
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  top: calc(200px - 25px);
+  left: calc(150px - 25px);
+  transition: transform 1s, background-color 1s, color 1s;
+}
+
+#envelope button:hover {
+  background-color: white;
+  transform: scale(1.5);
+  color: rgb(255, 89, 0);
+  transition: transform 1s, background-color 1s, color 1s;
+}
+.text h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
